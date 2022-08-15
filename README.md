@@ -5,7 +5,7 @@ esp8266 (lolin wemos d1 mini) ----> rs485 (Модуль MAX485) ----> RH-6902 ( 
 В проекте используеться датчик растворенного озона RH-6902
 через интерфейс rs485 (используеться конвертер) https://aliexpress.ru/item/32848344535.html?sku_id=65155011742&spm=a2g0o.search.0.0.3f4b15cdODkTN7
 
-             |  D7 --- RO |
-wemos d1 mini|  D6 --- RE | Модуль MAX485
-             |     \__ DE |
-             |  D8 --- DI |
+wemos d1 mini |  D7 --- RO | Модуль MAX485
+              |  D6 --- RE | 
+              |     \__ DE |
+              |  D8 --- DI |
