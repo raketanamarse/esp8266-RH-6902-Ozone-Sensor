@@ -7,6 +7,8 @@ esp8266 (lolin wemos d1 mini) ----> rs485 (Модуль MAX485) ----> RH-6902 ( 
 
 wemos d1 mini |  D7 --- RO | Модуль MAX485 
 
-wemos d1 mini |  D6 --- RE | Модуль MAX485
-wemos d1 mini |     \__ DE | Модуль MAX485
-wemos d1 mini |  D8 --- DI | Модуль MAX485
+              |  D6 --- RE | 
+              
+              |     \__ DE | 
+              
+              |  D8 --- DI | 
