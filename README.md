@@ -9,3 +9,7 @@ esp8266 (lolin wemos d1 mini) ----> rs485 (Модуль MAX485) ----> RH-6902 ( 
                   |  D6 --- RE | 
                   |     \__ DE | 
                   |  D8 --- DI | 
+
+
+НИКОГДА не спользуете gpio2, gpio0, gpio15 для эмуляции  SoftwareSerial --> так как напряжение на этих пинах отвечает за тип заерузки платы 
+![изображение](https://user-images.githubusercontent.com/104571006/185757983-ad783d9d-1677-49b4-88fd-dfd6af976ee0.png)
