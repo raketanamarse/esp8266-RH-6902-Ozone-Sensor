@@ -1,7 +1,7 @@
 #include <SoftwareSerial.h>
-#define RXD2 D7
-#define TXD2 D8
-#define DE_RE D6
+#define RXD2 D1
+#define TXD2 D2
+#define DE_RE D3
 
 SoftwareSerial S(RXD2, TXD2); //   (RX , TX)
 
@@ -9,21 +9,22 @@ byte ByteArray[250];
 int ByteData[20];
 
 void setup() {
-  Serial.begin(9600);
-  S.begin(9600, SWSERIAL_8N1);
+  Serial.begin(74880);
+  while (!Serial) { }// ожидаем подключения к последовательному порту.
   pinMode(DE_RE, OUTPUT);
+  S.begin(9600, SWSERIAL_8N1);
+
 }
 
 void loop() {
-
-
+    delay(2000); 
   byte msg[] = {0x01, 0x03, 0x00, 0x00, 0x00, 0x01, 0x84, 0x0A};
   int len = 8;
 
 
   digitalWrite(DE_RE, 1); 
   
-  Serial.println("SEND DATA");
+  Serial.println("SEND DATA:");
   for (int i = 0 ; i < len ; i++) {
     S.write(msg[i]);
     Serial.print("[");
@@ -31,8 +32,8 @@ void loop() {
     Serial.print("]");
     Serial.print("=");
     Serial.print(String(msg[i], HEX));
+    Serial.print(" ");
   }
-  len = 0;
   Serial.println();
   Serial.println();
 
@@ -46,10 +47,9 @@ void loop() {
     a++;
   }
 
-  int b;
   String registros;
   Serial.println("DATA RECEPTION");
-  for (b = 0 ; b < a ; b++) {
+  for (int b = 0 ; b < a ; b++) {
     Serial.print("[");
     Serial.print(b);
     Serial.print("]");
@@ -67,7 +67,5 @@ void loop() {
   O3 += float(ByteArray[4]);
   Serial.println(O3);
 
-  delay(2000);                      
-
-
+                     
 }
